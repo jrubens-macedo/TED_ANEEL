@@ -1,0 +1,8 @@
+JUL_13000821
+Max_kW_DU = 859.95
+Max_kW_SA = 849.24
+Max_kW_DO = 0.0
+----------------------------------------
+New "Loadshape.UGMT_DU" 24 1.0 mult=(0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.6289 0.932 0.8786 0.8683 0.8315 0.7835 0.898 0.8442 0.8155 0.843 0.8622 0.6997 0.0011 0.0 0.0 0.0)
+New "Loadshape.UGMT_SA" 24 1.0 mult=(0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.1844 0.3981 0.3982 0.3984 0.3984 0.3981 0.3979 0.3978 0.3975 0.397 0.3957 0.3739 0.0 0.0 0.0 0.0)
+New "Loadshape.UGMT_DO" 24 1.0 mult=(nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan)

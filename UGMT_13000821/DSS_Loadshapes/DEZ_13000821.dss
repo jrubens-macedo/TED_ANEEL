@@ -1,0 +1,8 @@
+DEZ_13000821
+Max_kW_DU = 0.0
+Max_kW_SA = 0.0
+Max_kW_DO = 0.0
+----------------------------------------
+New "Loadshape.UGMT_DU" 24 1.0 mult=(nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan)
+New "Loadshape.UGMT_SA" 24 1.0 mult=(nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan)
+New "Loadshape.UGMT_DO" 24 1.0 mult=(nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan)
