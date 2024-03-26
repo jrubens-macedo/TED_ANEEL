@@ -5,7 +5,11 @@ import matplotlib.pyplot as plt
 import numpy as np
 import os
 
-nome_arquivo = (r'C:\pythonjr\aneel\UGMT_15732740\CSVs\JUL_15732740.csv')
+import warnings
+warnings.filterwarnings( 'ignore' )
+
+
+nome_arquivo = (r'C:\pythonjr\TED_ANEEL\UGMT_15639286\CSVs\JUL_15639286.csv')
 
 # Extrair o nome do arquivo da parte final do caminho
 mes_csv = os.path.basename(nome_arquivo)
@@ -180,7 +184,7 @@ try:
     array_media_SA = np.round(np.array(media_SA), 4)
     array_media_DO = np.round(np.array(media_DO), 4)
     # Salvar array em um arquivo de texto (.dss)
-    with open(r'C:\pythonjr\aneel\UGMT_15732740\DSS_Loadshapes\UGMT_Loadshape.dss', 'w') as arquivo_dss:
+    with open(r'C:\pythonjr\TED_ANEEL\UGMT_15639286\DSS_Loadshapes\UGMT_Loadshape.dss', 'w') as arquivo_dss:
         arquivo_dss.write(f'{mes_ugmt}\n')
         arquivo_dss.write(f'Max_kW_DU = {max_kW_DU}\n')
         arquivo_dss.write(f'Max_kW_SA = {max_kW_SA}\n')
