@@ -14,7 +14,7 @@ df['Data_Hora'] = df['Data'] + ' ' + df['Hora']
 
 # Seleciona as colunas necessárias, excluindo a coluna 'Hora'
 df_final = df.iloc[:, [0, -1, 3, 4, 5]].copy()
-df_final.columns = ['UGMT', 'Data_Hora', 'Consumo (kW)', 'Injeção (kW)', 'Potência Instalada (kW)']
+df_final.columns = ['UGMT', 'Data_Hora', 'Consumo (kW)', 'Injecao (kW)', 'Potencia Instalada (kW)']
 
 # Salva o DataFrame em um arquivo CSV
 df_final.to_csv('arquivo_ajustado.csv', index=False)

@@ -8,12 +8,12 @@ import os
 import warnings
 warnings.filterwarnings('ignore')
 
-nome_arquivo = r'C:\pythonjr\TED_ANEEL\13000821.csv'
+nome_arquivo = r'C:\pythonjr\tedaneel\13000821.csv'
 
 ###########################################################
 # ESCOLHA DO MÊS
 ###########################################################
-mes_escolhido = 10
+mes_escolhido = 9
 
 # Extrair o nome do arquivo da parte final do caminho
 mes_csv = os.path.basename(nome_arquivo)
@@ -179,7 +179,7 @@ try:
     plt.show()
 
     # Criando um objeto ExcelWriter
-    with pd.ExcelWriter(r'C:\pythonjr\TED_ANEEL\UGMT_13000821\output.xlsx') as writer:
+    with pd.ExcelWriter(r'C:\pythonjr\tedaneel\UGMT_13000821\output.xlsx') as writer:
 
         # Escrevendo a aba de Dias Úteis
         df_DU_pivot = df_DU.pivot_table(index=df_DU['Data/Hora'].dt.hour, columns=df_DU['Data/Hora'].dt.date, values='kw', aggfunc='sum')
@@ -201,7 +201,7 @@ try:
     array_media_DO = np.round(np.array(media_DO), 4)
 
     # Salvar array em um arquivo de texto (.dss)
-    with open(r'C:\pythonjr\TED_ANEEL\UGMT_13000821\DSS_Loadshapes\UGMT_Loadshape.dss', 'w') as arquivo_dss:
+    with open(r'C:\pythonjr\tedaneel\UGMT_13000821\DSS_Loadshapes\UGMT_Loadshape.dss', 'w') as arquivo_dss:
         arquivo_dss.write(f'{mes_ugmt}\n')
         arquivo_dss.write(f'Max_kW_DU = {max_kW_DU}\n')
         arquivo_dss.write(f'Max_kW_SA = {max_kW_SA}\n')

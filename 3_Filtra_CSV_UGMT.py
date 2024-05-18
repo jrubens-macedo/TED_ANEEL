@@ -14,6 +14,7 @@ def filtrar_dados_por_codigo(codigo):
     print(f'Arquivo criado com sucesso.')
 
 # Informar o código da UGMT
-codigo = 3013983346
+#codigo = 3013983346
+codigo = 3013754821
 
 filtrar_dados_por_codigo(codigo)
