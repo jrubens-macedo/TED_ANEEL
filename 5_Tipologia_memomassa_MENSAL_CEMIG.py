@@ -8,12 +8,47 @@ import os
 import warnings
 warnings.filterwarnings('ignore')
 
-nome_arquivo = r'C:\pythonjr\tedaneel\3013754821.csv'
+# Selecione a UGMT desejada ###########
+
+cod_ugmt = 3013586192
+
+#######################################
+
+# Nome do arquivo de dados
+nome_arquivo = fr'C:\pythonjr\tedaneel\{cod_ugmt}.csv'
+
 
 ###########################################################
 # ESCOLHA DO MÊS
 ###########################################################
+
 mes_escolhido = 12
+
+###########################################################
+
+# Dicionário de abreviações de meses em português
+meses_abreviados = {
+    1: "JAN",
+    2: "FEV",
+    3: "MAR",
+    4: "ABR",
+    5: "MAI",
+    6: "JUN",
+    7: "JUL",
+    8: "AGO",
+    9: "SET",
+    10: "OUT",
+    11: "NOV",
+    12: "DEZ"
+}
+
+# Verifica se o mês escolhido é válido e atribui a abreviação correspondente
+if 1 <= mes_escolhido <= 12:
+    mes_selecionado = meses_abreviados[mes_escolhido]
+    print(f"Mês selecionado............: {mes_selecionado}")
+else:
+    print("Número do mês inválido. Por favor, insira um valor entre 1 e 12.")
+
 
 # Extrair o nome do arquivo da parte final do caminho
 mes_csv = os.path.basename(nome_arquivo)
@@ -176,10 +211,16 @@ try:
     # Ajusta o layout para evitar sobreposição
     plt.tight_layout()
 
+    # Caminho para salvar o gráfico
+    caminho_figura = fr'C:\pythonjr\tedaneel\UGMT_{cod_ugmt}\DSS_Figuras\UGMT_{cod_ugmt}_{mes_selecionado}.png'
+
+    # Salvar o gráfico
+    plt.savefig(caminho_figura)
+
     plt.show()
 
     # Criando um objeto ExcelWriter
-    with pd.ExcelWriter(r'C:\pythonjr\tedaneel\UGMT_3013754821\output.xlsx') as writer:
+    with pd.ExcelWriter(fr'C:\pythonjr\tedaneel\UGMT_{cod_ugmt}\output.xlsx') as writer:
 
         # Escrevendo a aba de Dias Úteis
         df_DU_pivot = df_DU.pivot_table(index=df_DU['Data/Hora'].dt.hour, columns=df_DU['Data/Hora'].dt.date, values='kw', aggfunc='sum')
@@ -201,7 +242,7 @@ try:
     array_media_DO = np.round(np.array(media_DO), 4)
 
     # Salvar array em um arquivo de texto (.dss)
-    with open(r'C:\pythonjr\tedaneel\UGMT_3013754821\DSS_Loadshapes\UGMT_Loadshape.dss', 'w') as arquivo_dss:
+    with open(fr'C:\pythonjr\tedaneel\UGMT_{cod_ugmt}\DSS_Loadshapes\UGMT_{cod_ugmt}_{mes_selecionado}.dss', 'w') as arquivo_dss:
         arquivo_dss.write(f'{mes_ugmt}\n')
         arquivo_dss.write(f'Max_kW_DU = {max_kW_DU}\n')
         arquivo_dss.write(f'Max_kW_SA = {max_kW_SA}\n')
