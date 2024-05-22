@@ -10,7 +10,7 @@ warnings.filterwarnings('ignore')
 
 # Selecione a UGMT desejada ###########
 
-cod_ugmt = 3013586192
+cod_ugmt = 3013983346
 
 #######################################
 
@@ -22,7 +22,7 @@ nome_arquivo = fr'C:\pythonjr\tedaneel\{cod_ugmt}.csv'
 # ESCOLHA DO MÊS
 ###########################################################
 
-mes_escolhido = 12
+mes_escolhido = 1
 
 ###########################################################
 
